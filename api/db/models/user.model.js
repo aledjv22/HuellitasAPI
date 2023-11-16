@@ -7,7 +7,7 @@ const UserSchema = {
   id: {
     allowNull: false,
     primaryKey: true,
-    type: DataTypes.UUIDV4,
+    type: DataTypes.STRING,
     defaultValue: () => uuidv4()
   },
   firstName: {
