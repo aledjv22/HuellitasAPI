@@ -15,7 +15,11 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
-const whitelist = ['http://localhost:5500', 'http://127.0.0.1:5500'];
+const whitelist = [
+  'http://localhost:5500',
+  'http://127.0.0.1:5500',
+  'https://aledjv22.github.io'
+];
 const options = {
   origin: (origin, callback) => {
     if (whitelist.includes(origin) || !origin){
