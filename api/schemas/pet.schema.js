@@ -17,7 +17,7 @@ const createdAt = Joi.date();
 
 const createPetSchema = Joi.object({
   name: name.required(),
-  state: state.required(),
+  state: state,
   location: location.required(),
   sex: sex.required(),
   disability: disability.required(),
@@ -26,7 +26,7 @@ const createPetSchema = Joi.object({
   castrated: castrated,
   vaccinated: vaccinated,
   type: type.required(),
-  image: image.required(),
+  image: image,
   need: need.required(),
   createdAt: createdAt
 });
