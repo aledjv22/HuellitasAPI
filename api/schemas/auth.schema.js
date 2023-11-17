@@ -1,7 +1,7 @@
 const Joi = require('joi');
 
-const email = Joi.string().email();
-const password = Joi.string().min(8);
+const email = Joi.string();
+const password = Joi.string();
 const newPassword = Joi.string().min(8);
 const token = Joi.string();
 

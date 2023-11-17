@@ -53,7 +53,7 @@ router.post('/',
 
 router.patch('/:id',
   passport.authenticate('jwt', {session: false}),
-  checkRoles('admin', 'seller'),
+  checkRoles('admin'),
   validatorHandler(getUserSchema, 'params'),
   validatorHandler(updateUserSchema, 'body'),
   async (req, res, next) => {
@@ -70,7 +70,7 @@ router.patch('/:id',
 
 router.delete('/:id',
   passport.authenticate('jwt', {session: false}),
-  checkRoles('admin', 'seller'),
+  checkRoles('admin'),
   validatorHandler(deleteUserSchema, 'params'),
   async (req, res, next) => {
     try {

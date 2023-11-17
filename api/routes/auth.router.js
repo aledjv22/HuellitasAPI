@@ -13,7 +13,7 @@ const {
 const router = express.Router();
 const service = new AuthService();
 
-router.post('/login', 
+router.post('/login',
   validatorHandler(loginAuthSchema, 'body'),
   passport.authenticate('local', {session: false}),
   async (req, res, next) => {
@@ -25,7 +25,7 @@ router.post('/login',
     }
 });
 
-router.post('/recovery', 
+router.post('/recovery',
   validatorHandler(recoveryAuthSchema, 'body'),
   async (req, res, next) => {
     try {
@@ -38,7 +38,7 @@ router.post('/recovery',
     }
 });
 
-router.post('/change-password', 
+router.post('/change-password',
   validatorHandler(changePasswordAuthSchema, 'body'),
   async (req, res, next) => {
     try {
