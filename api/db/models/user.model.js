@@ -21,7 +21,7 @@ const UserSchema = {
   image: {
     allowNull: false,
     type: DataTypes.STRING,
-    defaultValue: 'https://drive.google.com/file/d/1Jf5a8RyRdZSOZxNkyGDaILXn9WzerKJ7/view?usp=sharing'
+    defaultValue: 'https://lh3.googleusercontent.com/u/0/drive-viewer/AK7aPaB0eUcVejrD3DIyFcnmlf15P4lrGFUGqkkwqI0g1VYLdYNMdioByR-wfiId72_DqiGs-ygrgR13xHwhLnl7nsLvkCrvIg=w958-h917'
   },
   email: {
     allowNull: false,
