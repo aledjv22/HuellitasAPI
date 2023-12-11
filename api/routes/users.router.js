@@ -14,8 +14,6 @@ const router = express.Router();
 const service = new UsersService();
 
 router.get('/',
-  // passport.authenticate('jwt', {session: false}),
-  // checkRoles('admin'),
   async  (req, res) => {
     const users = await service.find();
 
@@ -24,8 +22,6 @@ router.get('/',
 );
 
 router.get('/:id',
-  passport.authenticate('jwt', {session: false}),
-  checkRoles('admin'),
   validatorHandler(getUserSchema, 'params'),
   async (req, res, next) => {
     try {
@@ -53,7 +49,6 @@ router.post('/',
 
 router.patch('/:id',
   passport.authenticate('jwt', {session: false}),
-  checkRoles('admin'),
   validatorHandler(getUserSchema, 'params'),
   validatorHandler(updateUserSchema, 'body'),
   async (req, res, next) => {
