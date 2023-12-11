@@ -2,7 +2,7 @@ services:
   postgres:
     image: postgres:13
     environment:
-      - POSTGRES_DB=my_store
+      - POSTGRES_DB=db-huellitas
       - POSTGRES_USER=ale
       - POSTGRES_PASSWORD=admin123
     ports:
@@ -21,7 +21,7 @@ services:
   mysql:
     image: mysql:5
     environment:
-      - MYSQL_DATABASE=my_store
+      - MYSQL_DATABASE=db-huellitas
       - MYSQL_USER=root
       - MYSQL_ROOT_PASSWORD=admin123
       - MYSQL_PORT=3306

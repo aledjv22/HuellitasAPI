@@ -29,8 +29,6 @@ class UsersService {
     if (!user)
       throw boom.notFound('User not found');
 
-    delete user.dataValues.recoveryToken;
-
     return user;
   }
 
