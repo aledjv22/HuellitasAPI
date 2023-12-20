@@ -56,8 +56,7 @@ const PetSchema = {
   },
   image: {
     allowNull: false,
-    type: DataTypes.STRING,
-    defaultValue: 'https://lh3.googleusercontent.com/u/0/drive-viewer/AK7aPaAzTFJxMPZBhaWFZ8A3TYEDeQBCgIsUXmFrrdtYukhwFY718PttfgHeJW3p3bgEaABlP8GginnW4womVGMt4palToZd8w=w411-h917'
+    type: DataTypes.STRING
   },
   need: {
     allowNull: false,
