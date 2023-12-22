@@ -19,8 +19,15 @@ const changePasswordAuthSchema = Joi.object({
   newPassword: newPassword.required(),
 });
 
+const changePasswordLocalAuthSchema = Joi.object({
+  email: email.required(),
+  password: password.required(),
+  newPassword: newPassword.required(),
+});
+
 module.exports = {
   loginAuthSchema,
   recoveryAuthSchema,
-  changePasswordAuthSchema
+  changePasswordAuthSchema,
+  changePasswordLocalAuthSchema,
 };

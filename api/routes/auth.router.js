@@ -7,7 +7,8 @@ const validatorHandler = require('../middlewares/validator.handler');
 const {
   loginAuthSchema,
   recoveryAuthSchema,
-  changePasswordAuthSchema
+  changePasswordAuthSchema,
+  changePasswordLocalAuthSchema
 } = require('../schemas/auth.schema');
 
 const router = express.Router();
@@ -44,6 +45,19 @@ router.post('/change-password',
     try {
       const { token, newPassword } = req.body;
       const rta = await service.changePassword(token, newPassword);
+
+      res.json(rta);
+    } catch (error) {
+      next(error);
+    }
+});
+
+router.post('/change-password-local',
+  validatorHandler(changePasswordLocalAuthSchema, 'body'),
+  async (req, res, next) => {
+    try {
+      const { email, password, newPassword } = req.body;
+      const rta = await service.changePasswordLocal(email, password, newPassword);
 
       res.json(rta);
     } catch (error) {

@@ -85,6 +85,23 @@ class AuthService {
     }
   }
 
+  async changePasswordLocal(email, password, newPassword) {
+    const user = await service.findByEmail(email);
+    if (!user) {
+      throw boom.unauthorized();
+    }
+    
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      throw boom.unauthorized();
+    }
+
+    const hash = await bcrypt.hash(newPassword, 10);
+    await service.update(user.id, {password: hash});
+
+    return { message: 'password changed' };
+  }
+
   async sendMail(infoMail) {
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
