@@ -6,7 +6,7 @@ const lastName = Joi.string();
 const image = Joi.string().uri();
 const email = Joi.string().email();
 const phone = Joi.string();
-const password = Joi.string();
+const password = Joi.string().min(8);
 const role = Joi.string().min(3);
 const createdAt = Joi.date();
 
