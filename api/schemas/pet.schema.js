@@ -1,7 +1,7 @@
 const Joi = require('joi');
 
 const id = Joi.string().guid({version: ['uuidv4']});
-const name = Joi.string();
+const name = Joi.string().regex(/^[A-Za-z]+$/);
 const state = Joi.string();
 const location = Joi.string();
 const sex = Joi.string();
@@ -26,7 +26,7 @@ const createPetSchema = Joi.object({
   castrated: castrated,
   vaccinated: vaccinated,
   type: type.required(),
-  image: image,
+  image: image.required(),
   need: need.required(),
   createdAt: createdAt
 });

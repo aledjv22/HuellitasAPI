@@ -17,7 +17,7 @@ const PetSchema = {
   state: {
     allowNull: false,
     type: DataTypes.STRING,
-    defaultValue: 'En busca de hogar'
+    defaultValue: 'en busca de un hogar'
   },
   location: {
     allowNull: false,

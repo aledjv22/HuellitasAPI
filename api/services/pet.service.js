@@ -3,6 +3,15 @@ const { models } = require('../libs/sequelize');
 
 class PetsService {
   async create(data) {
+    if (data.name)
+      data.name = data.name.charAt(0).toUpperCase() + data.name.slice(1);
+
+    if (data.sex) data.sex = data.sex.toLowerCase();
+
+    if (data.type) data.type = data.type.toLowerCase();
+
+    if (data.state) data.state = data.state.toLowerCase();
+
     const newPet = await models.Pet.create(data);
 
     return newPet
