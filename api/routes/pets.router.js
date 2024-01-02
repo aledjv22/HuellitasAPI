@@ -14,8 +14,6 @@ const router = express.Router();
 const service = new PetsService();
 
 router.get('/',
-  // passport.authenticate('jwt', {session: false}),
-  // checkRoles('admin'),
   async  (req, res) => {
     const pets = await service.find();
 
@@ -24,8 +22,6 @@ router.get('/',
 );
 
 router.get('/:id',
-  // passport.authenticate('jwt', {session: false}),
-  // checkRoles('admin'),
   validatorHandler(getPetSchema, 'params'),
   async (req, res, next) => {
     try {
@@ -39,6 +35,7 @@ router.get('/:id',
 });
 
 router.post('/',
+  passport.authenticate('jwt', {session: false}),
   validatorHandler(createPetSchema, 'body'),
   async (req, res, next) => {
     try {
@@ -53,7 +50,6 @@ router.post('/',
 
 router.patch('/:id',
   passport.authenticate('jwt', {session: false}),
-  checkRoles('admin'),
   validatorHandler(getPetSchema, 'params'),
   validatorHandler(updatePetSchema, 'body'),
   async (req, res, next) => {
