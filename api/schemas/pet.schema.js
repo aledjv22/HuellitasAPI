@@ -5,14 +5,14 @@ const name = Joi.string().regex(/^[A-Za-z]+$/);
 const state = Joi.string();
 const location = Joi.string();
 const sex = Joi.string();
-const disability = Joi.string();
-const breed = Joi.string().min(3);
+// const disability = Joi.string();
+// const breed = Joi.string().min(3);
 const age = Joi.string();
-const castrated = Joi.string();
-const vaccinated = Joi.string();
+// const castrated = Joi.string();
+// const vaccinated = Joi.string();
 const type = Joi.string();
-const image = Joi.string().uri();
-const need = Joi.string();
+const main_image = Joi.string().uri();
+// const need = Joi.string();
 const createdAt = Joi.date();
 
 const createPetSchema = Joi.object({
@@ -20,14 +20,14 @@ const createPetSchema = Joi.object({
   state: state,
   location: location.required(),
   sex: sex.required(),
-  disability: disability.required(),
-  breed: breed.required(),
+  // disability: disability.required(),
+  // breed: breed.required(),
   age: age,
-  castrated: castrated,
-  vaccinated: vaccinated,
+  // castrated: castrated,
+  // vaccinated: vaccinated,
   type: type.required(),
-  image: image.required(),
-  need: need.required(),
+  main_image: main_image.required(),
+  // need: need.required(),
   createdAt: createdAt
 });
 
@@ -36,14 +36,14 @@ const updatePetSchema = Joi.object({
   state: state,
   location: location,
   sex: sex,
-  disability: disability,
-  breed: breed,
+  // disability: disability,
+  // breed: breed,
   age: age,
-  castrated: castrated,
-  vaccinated: vaccinated,
+  // castrated: castrated,
+  // vaccinated: vaccinated,
   type: type,
-  image: image,
-  need: need,
+  main_image: main_image,
+  // need: need,
   createdAt: createdAt
 });
 

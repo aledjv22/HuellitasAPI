@@ -27,41 +27,41 @@ const PetSchema = {
     allowNull: false,
     type: DataTypes.STRING
   },
-  disability: {
-    allowNull: false,
-    type: DataTypes.STRING
-  },
-  breed: {
-    allowNull: false,
-    type: DataTypes.STRING
-  },
+  // disability: {
+  //   allowNull: false,
+  //   type: DataTypes.STRING
+  // },
+  // breed: {
+  //   allowNull: false,
+  //   type: DataTypes.STRING
+  // },
   age: {
     allowNull: false,
     type: DataTypes.STRING,
     defaultValue: 'Desconocido'
   },
-  castrated: {
-    allowNull: false,
-    type: DataTypes.STRING,
-    defaultValue: 'Desconocido'
-  },
-  vaccinated: {
-    allowNull: false,
-    type: DataTypes.STRING,
-    defaultValue: 'Desconocido'
-  },
+  // castrated: {
+  //   allowNull: false,
+  //   type: DataTypes.STRING,
+  //   defaultValue: 'Desconocido'
+  // },
+  // vaccinated: {
+  //   allowNull: false,
+  //   type: DataTypes.STRING,
+  //   defaultValue: 'Desconocido'
+  // },
   type: {
     allowNull: false,
     type: DataTypes.STRING,
   },
-  image: {
+  main_image: {
     allowNull: false,
     type: DataTypes.STRING
   },
-  need: {
-    allowNull: false,
-    type: DataTypes.STRING
-  },
+  // need: {
+  //   allowNull: false,
+  //   type: DataTypes.STRING
+  // },
   createdAt: {
     allowNull: false,
     type: DataTypes.DATE,
