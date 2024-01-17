@@ -10,7 +10,7 @@ const description = Joi.string();
 const type = Joi.string();
 const size = Joi.string();
 const main_image = Joi.string().uri();
-const images = Joi.array().items(Joi.string().uri()).length(10);
+const images = Joi.array().items(Joi.string().uri()).min(3).max(10);
 const views = Joi.number().integer();
 const createdAt = Joi.date();
 
@@ -25,7 +25,7 @@ const createPetSchema = Joi.object({
   size: size.required(),
   main_image: main_image.required(),
   images: images.required(),
-  views: views.required(),
+  views: views,
   createdAt: createdAt
 });
 
@@ -40,7 +40,7 @@ const updatePetSchema = Joi.object({
   size: size,
   main_image: main_image,
   images: images,
-  createdAt: createdAt
+  views: views
 });
 
 const getPetSchema = Joi.object({
