@@ -16,8 +16,7 @@ const PetSchema = {
   },
   state: {
     allowNull: false,
-    type: DataTypes.STRING,
-    defaultValue: 'en busca de un hogar'
+    type: DataTypes.STRING
   },
   location: {
     allowNull: false,
@@ -27,41 +26,35 @@ const PetSchema = {
     allowNull: false,
     type: DataTypes.STRING
   },
-  // disability: {
-  //   allowNull: false,
-  //   type: DataTypes.STRING
-  // },
-  // breed: {
-  //   allowNull: false,
-  //   type: DataTypes.STRING
-  // },
   age: {
     allowNull: false,
-    type: DataTypes.STRING,
-    defaultValue: 'Desconocido'
+    type: DataTypes.STRING
   },
-  // castrated: {
-  //   allowNull: false,
-  //   type: DataTypes.STRING,
-  //   defaultValue: 'Desconocido'
-  // },
-  // vaccinated: {
-  //   allowNull: false,
-  //   type: DataTypes.STRING,
-  //   defaultValue: 'Desconocido'
-  // },
+  description: {
+    allowNull: false,
+    type: DataTypes.STRING
+  },
   type: {
     allowNull: false,
     type: DataTypes.STRING,
+  },
+  size: {
+    allowNull: false,
+    type: DataTypes.STRING
   },
   main_image: {
     allowNull: false,
     type: DataTypes.STRING
   },
-  // need: {
-  //   allowNull: false,
-  //   type: DataTypes.STRING
-  // },
+  images: {
+    allowNull: false,
+    type: DataTypes.ARRAY(DataTypes.STRING)
+  },
+  views: {
+    allowNull: false,
+    type: DataTypes.INTEGER,
+    defaultValue: 0
+  },
   createdAt: {
     allowNull: false,
     type: DataTypes.DATE,
