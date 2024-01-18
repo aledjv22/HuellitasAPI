@@ -1,24 +1,15 @@
 const boom = require('@hapi/boom');
 const { models } = require('../libs/sequelize');
 
-function normalizeData(data) {
-  for (let key in data) {
-    if (typeof data[key] === 'string') {
-      data[key] = data[key].toLowerCase();
-    }
-  }
-}
-
 class PetsService {
   async create(data) {
-    normalizeData(data);
-    
-    if (data.name) {
-      data.name = data.name
-        .toLowerCase()
-        .split(' ')
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(' ');
+    const columns = ['name', 'state', 'location', 'sex', 'type', 'size'];
+
+    for (const column of columns) {
+      if (data[column]) {
+        data[column] = data[column].toLowerCase();
+        data[column] = data[column].charAt(0).toUpperCase() + data[column].slice(1);
+      }
     }
 
     const newPet = await models.Pet.create(data);
