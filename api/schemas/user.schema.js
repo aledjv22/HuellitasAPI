@@ -8,6 +8,11 @@ const email = Joi.string().email();
 const phone = Joi.string();
 const password = Joi.string().min(8);
 const role = Joi.string().min(3);
+const foundation = Joi.string().min(3);
+const location = Joi.string().min(3);
+const alias = Joi.string().min(3);
+const cbuCvu = Joi.string().min(3);
+const urlDonation = Joi.string().uri();
 const createdAt = Joi.date();
 
 const createUserSchema = Joi.object({
@@ -18,6 +23,11 @@ const createUserSchema = Joi.object({
   phone: phone,
   password: password.required(),
   role: role,
+  foundation: foundation,
+  location: location,
+  alias: alias,
+  cbuCvu: cbuCvu,
+  urlDonation: urlDonation,
   createdAt: createdAt
 });
 
@@ -29,6 +39,11 @@ const updateUserSchema = Joi.object({
   phone: phone,
   password: password,
   role: role,
+  foundation: foundation,
+  location: location,
+  alias: alias,
+  cbuCvu: cbuCvu,
+  urlDonation: urlDonation,
   createdAt: createdAt
 });
 

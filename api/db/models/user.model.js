@@ -47,6 +47,26 @@ const UserSchema = {
     type: DataTypes.STRING,
     defaultValue: 'particular'
   },
+  foundation: {
+    allowNull: true,
+    type: DataTypes.STRING
+  },
+  location: {
+    allowNull: true,
+    type: DataTypes.STRING
+  },
+  alias: {
+    allowNull: true,
+    type: DataTypes.STRING
+  },
+  cbuCvu: {
+    allowNull: true,
+    type: DataTypes.STRING
+  },
+  urlDonation: {
+    allowNull: true,
+    type: DataTypes.STRING
+  },
   createdAt: {
     allowNull: false,
     type: DataTypes.DATE,
