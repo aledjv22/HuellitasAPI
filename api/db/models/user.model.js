@@ -21,7 +21,7 @@ const UserSchema = {
   image: {
     allowNull: false,
     type: DataTypes.STRING,
-    defaultValue: 'https://i.ibb.co/fGjm3YW/perfil.jpg'
+    defaultValue: 'https://i.ibb.co/sQ2V3vt/particular-Profile.jpg'
   },
   email: {
     allowNull: false,
@@ -45,7 +45,7 @@ const UserSchema = {
   role: {
     allowNull: false,
     type: DataTypes.STRING,
-    defaultValue: 'transito'
+    defaultValue: 'particular'
   },
   createdAt: {
     allowNull: false,
