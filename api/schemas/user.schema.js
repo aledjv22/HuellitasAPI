@@ -8,10 +8,10 @@ const email = Joi.string().email();
 const phone = Joi.string();
 const password = Joi.string().min(8);
 const role = Joi.string().min(3);
-const foundation = Joi.string().min(3);
-const location = Joi.string().min(3);
-const alias = Joi.string().min(3);
-const cbuCvu = Joi.string().min(3);
+const foundation = Joi.string();
+const location = Joi.string();
+const alias = Joi.string();
+const cbuCvu = Joi.string();
 const urlDonation = Joi.string().uri();
 const createdAt = Joi.date();
 
