@@ -30,8 +30,7 @@ const UserSchema = {
   },
   phone: {
     allowNull: true,
-    type: DataTypes.STRING,
-    defaultValue: '-'
+    type: DataTypes.STRING
   },
   password: {
     allowNull: false,
