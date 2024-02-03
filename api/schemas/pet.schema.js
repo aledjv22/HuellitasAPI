@@ -16,7 +16,7 @@ const views = Joi.number().integer();
 const createdAt = Joi.date();
 
 const createPetSchema = Joi.object({
-  userId: userId, // Required
+  userId: userId.required(),
   name: name.required(),
   state: state.required(),
   location: location.required(),
@@ -32,7 +32,6 @@ const createPetSchema = Joi.object({
 });
 
 const updatePetSchema = Joi.object({
-  userId: userId, // Required
   name: name,
   state: state,
   location: location,

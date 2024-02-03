@@ -65,7 +65,7 @@ const PetSchema = {
   },
   userId: {
     field: 'userId',
-    allowNull: true, //false
+    allowNull: true,
     type: DataTypes.STRING,
     references: {
       model: USER_TABLE,
