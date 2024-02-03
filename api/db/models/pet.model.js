@@ -11,7 +11,7 @@ const PetSchema = {
     defaultValue: () => uuidv4()
   },
   userId: {
-    allowNull: false,
+    allowNull: true,
     type: DataTypes.STRING,
     field: 'userId'
   },
