@@ -1,4 +1,5 @@
 const Joi = require('joi');
+const { createUserSchema, updatePetSchema } = require('./user.schema');
 
 const id = Joi.string().guid({version: ['uuidv4']});
 const userId = Joi.string().guid({version: ['uuidv4']});

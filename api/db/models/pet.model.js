@@ -1,6 +1,8 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 const { v4: uuidv4} = require('uuid');
 
+const { USER_TABLE } = require('./user.model');
+
 const PET_TABLE = 'pets';
 
 const PetSchema = {
@@ -9,11 +11,6 @@ const PetSchema = {
     primaryKey: true,
     type: DataTypes.STRING,
     defaultValue: () => uuidv4()
-  },
-  userId: {
-    allowNull: true,
-    type: DataTypes.STRING,
-    field: 'userId'
   },
   name: {
     allowNull: false,
@@ -37,7 +34,7 @@ const PetSchema = {
   },
   description: {
     allowNull: false,
-    type: DataTypes.STRING
+    type: DataTypes.TEXT
   },
   type: {
     allowNull: false,
@@ -65,15 +62,22 @@ const PetSchema = {
     type: DataTypes.DATE,
     field: 'create_at',
     defaultValue: Sequelize.NOW
+  },
+  userId: {
+    field: 'user_id',
+    allowNull: true, //false
+    type: DataTypes.STRING,
+    references: {
+      model: USER_TABLE,
+      key: 'id'
+    },
+    onDelete: 'SET NULL'
   }
 };
 
 class Pet extends Model {
   static associate(models) {
-    this.belongsTo(models.User, {
-      foreignKey: 'userId',
-      as: 'user'
-    });
+    this.belongsTo(models.User, { as: 'user' });
   }
   static config(sequelize) {
     return {
