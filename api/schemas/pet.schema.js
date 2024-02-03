@@ -32,6 +32,7 @@ const createPetSchema = Joi.object({
 });
 
 const updatePetSchema = Joi.object({
+  userId: userId, // Required
   name: name,
   state: state,
   location: location,
