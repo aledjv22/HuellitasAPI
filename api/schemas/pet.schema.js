@@ -1,5 +1,4 @@
 const Joi = require('joi');
-const { createUserSchema, updatePetSchema } = require('./user.schema');
 
 const id = Joi.string().guid({version: ['uuidv4']});
 const userId = Joi.string().guid({version: ['uuidv4']});
@@ -33,7 +32,6 @@ const createPetSchema = Joi.object({
 });
 
 const updatePetSchema = Joi.object({
-  userId: userId,
   name: name,
   state: state,
   location: location,
