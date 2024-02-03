@@ -1,6 +1,7 @@
 const Joi = require('joi');
 
 const id = Joi.string().guid({version: ['uuidv4']});
+const userId = Joi.string().guid({version: ['uuidv4']});
 const name = Joi.string().regex(/^[A-Za-z]+$/);
 const state = Joi.string();
 const location = Joi.string();
@@ -15,6 +16,7 @@ const views = Joi.number().integer();
 const createdAt = Joi.date();
 
 const createPetSchema = Joi.object({
+  userId: userId, // Required
   name: name.required(),
   state: state.required(),
   location: location.required(),
@@ -30,6 +32,7 @@ const createPetSchema = Joi.object({
 });
 
 const updatePetSchema = Joi.object({
+  userId: userId,
   name: name,
   state: state,
   location: location,

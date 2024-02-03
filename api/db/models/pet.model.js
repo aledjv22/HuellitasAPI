@@ -10,6 +10,11 @@ const PetSchema = {
     type: DataTypes.STRING,
     defaultValue: () => uuidv4()
   },
+  userId: {
+    allowNull: false,
+    type: DataTypes.STRING,
+    field: 'userId'
+  },
   name: {
     allowNull: false,
     type: DataTypes.STRING
@@ -64,6 +69,12 @@ const PetSchema = {
 };
 
 class Pet extends Model {
+  static associate(models) {
+    this.belongsTo(models.User, {
+      foreignKey: 'userId',
+      as: 'user'
+    });
+  }
   static config(sequelize) {
     return {
       sequelize,
