@@ -64,7 +64,7 @@ const PetSchema = {
     defaultValue: Sequelize.NOW
   },
   userId: {
-    field: 'user_id',
+    field: 'userId',
     allowNull: true, //false
     type: DataTypes.STRING,
     references: {
