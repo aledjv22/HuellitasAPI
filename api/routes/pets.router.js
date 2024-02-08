@@ -3,7 +3,6 @@ const passport = require('passport');
 
 const PetsService = require('../services/pet.service');
 const validatorHandler = require('../middlewares/validator.handler');
-const { checkRoles } = require('../middlewares/auth.handler');
 const { createPetSchema,
         updatePetSchema,
         getPetSchema,
@@ -66,7 +65,6 @@ router.patch('/:id',
 
 router.delete('/:id',
   passport.authenticate('jwt', {session: false}),
-  checkRoles('admin'),
   validatorHandler(deletePetSchema, 'params'),
   async (req, res, next) => {
     try {
