@@ -2,7 +2,7 @@ const Joi = require('joi');
 
 const id = Joi.string().guid({version: ['uuidv4']});
 const userId = Joi.string().guid({version: ['uuidv4']});
-const name = Joi.string().regex(/^[A-Za-z]+$/);
+const name = Joi.string();
 const state = Joi.string();
 const location = Joi.string();
 const sex = Joi.string();
