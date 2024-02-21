@@ -16,7 +16,8 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 
 const whitelist = [
-  'https://aledjv22.github.io'
+  'https://aledjv22.github.io',
+  'https://www.huellitas.live'
 ];
 const options = {
   origin: (origin, callback) => {
