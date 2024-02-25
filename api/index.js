@@ -17,7 +17,8 @@ app.use(express.json());
 
 const whitelist = [
   'https://aledjv22.github.io',
-  'https://www.huellitas.live'
+  'https://www.huellitas.live',
+  'http://localhost:5500'
 ];
 const options = {
   origin: (origin, callback) => {
