@@ -51,7 +51,7 @@ class AuthService {
 
     const payload = { sub: user.id };
     const token = jwt.sign(payload, config.jwtSecret, {expiresIn: "15m"});
-    const link = `https://aledjv22.github.io/huellitas/recovery?token=${token}`;
+    const link = `https://www.huellitas.live/recovery?token=${token}`;
 
     await service.update(user.id, {recoveryToken: token});
 
@@ -90,7 +90,7 @@ class AuthService {
     if (!user) {
       throw boom.unauthorized();
     }
-    
+
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       throw boom.unauthorized();
